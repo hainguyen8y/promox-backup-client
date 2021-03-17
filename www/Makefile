@@ -121,11 +121,11 @@ js/proxmox-backup-gui.js: .lint-incremental js OnlineHelpInfo.js ${JSSRC}
 
 .PHONY: check
 check:
-	eslint --strict ${JSSRC}
+	#eslint --strict ${JSSRC}
 	touch ".lint-incremental"
 
 .lint-incremental: ${JSSRC}
-	eslint $?
+	#eslint $?
 	touch "$@"
 
 .PHONY: clean

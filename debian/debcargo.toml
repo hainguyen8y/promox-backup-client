@@ -10,7 +10,7 @@ vcs_browser = "https://git.proxmox.com/?p=proxmox-backup.git;a=summary"
 section = "admin"
 build_depends = [
   "bash-completion",
-  "debhelper (>= 12~)",
+  "debhelper (>= 11~)",
   "fonts-dejavu-core <!nodoc>",
   "fonts-lato <!nodoc>",
   "fonts-open-sans <!nodoc>",

@@ -4,7 +4,8 @@ include defines.mk
 PACKAGE := proxmox-backup
 ARCH := $(DEB_BUILD_ARCH)
 
-SUBDIRS := etc www docs
+SUBDIRS := etc
+# www docs
 
 # Binaries usable by users
 USR_BIN := \
@@ -73,7 +74,7 @@ doc:
 .PHONY: build
 build:
 	rm -rf build
-	rm -f debian/control
+	#rm -f debian/control
 	debcargo package --config debian/debcargo.toml --changelog-ready --no-overlay-write-back --directory build proxmox-backup $(shell dpkg-parsechangelog -l debian/changelog -SVersion | sed -e 's/-.*//')
 	sed -e '1,/^$$/ ! d' build/debian/control > build/debian/control.src
 	cat build/debian/control.src build/debian/control.in > build/debian/control
